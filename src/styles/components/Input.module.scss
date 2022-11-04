@@ -1,0 +1,9 @@
+@use '../abstracts/colors.scss' as *;
+
+.input {
+  padding: .8rem .8rem;
+  color: $black;
+  border: none;
+  border: 1px solid $black;
+  border-radius: .8rem;
+}
