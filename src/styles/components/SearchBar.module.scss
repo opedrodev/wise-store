@@ -1,0 +1,33 @@
+@use '../abstracts/colors.scss' as *;
+
+.searchBar {
+  position: relative;
+
+  & > .input {
+    width: 40rem;
+    border: none;
+
+    &:focus {
+      outline: 2px solid $primary;
+    }
+
+    &::selection {
+      background-color: $primary;
+      color: $white;
+    }
+  }
+
+  & > .icon {
+   font-size: 1.8rem;
+   position: absolute;
+   top: 50%;
+   right: 0;
+   transform: translate(-.8rem, -50%);
+   cursor: pointer;
+   transition: .3s all;
+
+   &:hover {
+     color: $primary;
+   }
+  }
+}

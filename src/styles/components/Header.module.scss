@@ -1,0 +1,12 @@
+@use '../abstracts/colors.scss' as *;
+
+.header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  column-gap: 3.2rem;
+  place-items: center;
+
+  padding: 1.6rem 3.2rem;
+  background-color: $secondary;
+  user-select: none;
+}

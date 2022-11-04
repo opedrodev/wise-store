@@ -1,0 +1,14 @@
+@use '../abstracts/colors.scss' as *;
+
+.cart {
+  & > .icon {
+    font-size: 3.2rem;
+    color: $black;
+    cursor: pointer;
+    transition: .3s all;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}
