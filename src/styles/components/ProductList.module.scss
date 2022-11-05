@@ -1,0 +1,15 @@
+@use '../utils/scrollbar.scss' as *;
+
+.productlist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3.2rem;
+
+  padding: 6.4rem;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    @include scrollbar;
+  }
+}

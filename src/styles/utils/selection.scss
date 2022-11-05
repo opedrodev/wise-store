@@ -1,0 +1,6 @@
+@use '../utils/colors.scss' as *;
+
+@mixin selection {
+  background-color: $primary;
+  color: $white;
+}
