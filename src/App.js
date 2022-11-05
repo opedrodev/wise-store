@@ -7,6 +7,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/category/:id" element={<Home />} />
     </Routes>
   );
 }

@@ -6,6 +6,8 @@
   column-gap: 3.2rem;
   place-items: center;
 
+  grid-column: 1 / -1;
+
   padding: 1.6rem 3.2rem;
   background-color: $secondary;
   user-select: none;

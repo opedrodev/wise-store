@@ -1,0 +1,36 @@
+@use '../abstracts/colors.scss' as *;
+
+.sidebar {
+  width: fit-content;
+  padding: 3.2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+
+  box-shadow: 0 .8rem 1.6rem rgba($black, .1);
+
+  & > .category {
+    font-size: 1.4rem;
+    text-decoration: none;
+  
+    &:link, &:visited {
+      color: $black;
+      transition: .3s all;
+  
+      &:hover {
+        color: $primary;
+      }
+
+      &::selection {
+        background-color: $primary;
+        color: $white;
+      }
+    }
+  }
+
+  & > .active {
+    @extend .category;
+    color: $primary !important;
+  }
+}

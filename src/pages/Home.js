@@ -1,11 +1,15 @@
 import React from 'react';
 import Header from '../components/Header';
+import Sidebar from '../components/Sidebar';
+
+import styles from '../styles/pages/Home.module.scss';
 
 function Home() {
   return (
-    <div>
+    <main className={styles.home}>
       <Header />
-    </div>
+      <Sidebar />
+    </main>
   );
 }
 
