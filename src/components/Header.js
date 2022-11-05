@@ -5,9 +5,11 @@ import Cart from './Cart';
 import Logo from './Logo';
 import Searchbar from './Searchbar';
 
+const { header } = styles;
+
 function Header() {
   return (
-    <header className={styles.header}>
+    <header className={header}>
       <Logo />
       <Searchbar />
       <Cart />

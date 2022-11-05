@@ -3,6 +3,8 @@ import React from 'react';
 
 import styles from '../styles/components/Input.module.scss';
 
+const { input } = styles;
+
 function Input(props) {
   const {
     type, id, name, value, placeholder, onChange, className,
@@ -10,7 +12,7 @@ function Input(props) {
 
   return (
     <input
-      className={`${styles.input} ${className}`}
+      className={`${input} ${className}`}
       type={type}
       id={id}
       name={name}

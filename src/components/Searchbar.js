@@ -4,11 +4,13 @@ import Input from './Input';
 
 import styles from '../styles/components/Searchbar.module.scss';
 
+const { searchbar, input, icon } = styles;
+
 function Searchbar() {
   return (
-    <div className={styles.searchbar}>
-      <Input placeholder="Search for something" className={styles.input} />
-      <IoSearchOutline className={styles.icon} />
+    <div className={searchbar}>
+      <Input placeholder="Search for something" className={input} />
+      <IoSearchOutline className={icon} />
     </div>
   );
 }
