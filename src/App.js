@@ -8,6 +8,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/category/:id" element={<Home />} />
+      <Route path="search/:term" element={<Home />} />
     </Routes>
   );
 }

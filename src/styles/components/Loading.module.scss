@@ -1,0 +1,30 @@
+@use '../utils/colors.scss' as *;
+
+.loading {
+  display: inline-block;
+  width: 8rem;
+  height: 8rem;
+
+  place-self: center;
+
+  &::after {
+    content: " ";
+    display: block;
+    width: 6.4rem;
+    height: 6.4rem;
+    margin: .8rem;
+    border-radius: 50%;
+    border: .6rem solid $secondary;
+    border-color: $secondary transparent $secondary transparent;
+    animation: loading 1.2s linear infinite;
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,14 @@
+@use '../utils/colors.scss' as *;
+
+@mixin scrollbar {
+  width: .8rem;
+
+  &-track {
+    background: darken($white, 2%);
+  }
+
+  &-thumb {
+    background: $secondary;
+    border-radius: .8rem;
+  }
+}
