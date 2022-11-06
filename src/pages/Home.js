@@ -15,11 +15,11 @@ function Home() {
   const { items: { results }, loading } = useSelector((state) => state.products);
 
   useEffect(() => {
-    dispatch(fetchByCategory(id));
+    if (id) dispatch(fetchByCategory(id));
   }, [id]);
 
   useEffect(() => {
-    dispatch(fetchByQuery(term));
+    if (term) dispatch(fetchByQuery(term));
   }, [term]);
 
   return (
