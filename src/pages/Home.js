@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { fetchByCategory, fetchByQuery } from '../app/reducers/products';
 import Header from '../components/Header';
 import Loading from '../components/Loading';
 import ProductList from '../components/ProductList';
 import Sidebar from '../components/Sidebar';
-import { fetchByCategory, fetchByQuery } from '../redux/reducers/products';
 
 import styles from '../styles/pages/Home.module.scss';
 
