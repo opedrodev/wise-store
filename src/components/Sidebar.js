@@ -4,20 +4,28 @@ import { getCategories } from '../services/api';
 
 import styles from '../styles/components/Sidebar.module.scss';
 
-const { sidebar, active, category } = styles;
-
 function Sidebar() {
   const [categories, setCategories] = useState([]);
 
-  useEffect(() => async () => setCategories(await getCategories()), [setCategories]);
+  /**
+   * Fetch the categories from the API.
+   */
+  const fetchCategories = async () => {
+    const response = await getCategories();
+    setCategories(response);
+  };
+
+  useEffect(() => {
+    fetchCategories();
+  }, []);
 
   return (
-    <section className={sidebar}>
+    <section className={styles.sidebar}>
       {categories.map(({ id, name }) => (
         <NavLink
           key={id}
           to={`/category/${id}`}
-          className={({ isActive }) => (isActive ? active : category)}
+          className={({ isActive }) => (isActive ? styles.active : styles.category)}
         >
           {name}
 

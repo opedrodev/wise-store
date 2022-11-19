@@ -1,7 +1,7 @@
 /**
  * Get categories from API
  * @memberof `services/api`
- * @returns categories
+ * @returns an array of categories
  */
 export const getCategories = async () => {
   const response = await fetch('https://api.mercadolibre.com/sites/MLB/categories');

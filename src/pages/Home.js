@@ -10,16 +10,16 @@ import Sidebar from '../components/Sidebar';
 import styles from '../styles/pages/Home.module.scss';
 
 function Home() {
-  const { id, term } = useParams();
   const dispatch = useDispatch();
+  const { id, term } = useParams();
   const { items: { results }, loading } = useSelector((state) => state.products);
 
   useEffect(() => {
-    if (id) dispatch(fetchByCategory(id));
+    dispatch(fetchByCategory(id));
   }, [id]);
 
   useEffect(() => {
-    if (term) dispatch(fetchByQuery(term));
+    dispatch(fetchByQuery(term));
   }, [term]);
 
   return (

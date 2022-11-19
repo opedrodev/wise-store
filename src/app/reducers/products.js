@@ -1,7 +1,7 @@
 /* eslint no-param-reassign: "error" */
 
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { getProductsFromCategoryId, getProductsFromQuery } from '../../services/api';
+import { getProductById, getProductsFromCategoryId, getProductsFromQuery } from '../../services/api';
 
 /**
  * Fetch products by category id.
@@ -33,6 +33,20 @@ export const fetchByQuery = createAsyncThunk(
   },
 );
 
+/**
+ * Fetch product details by id.
+ * @memberof `products`
+ * @param {string} id - Product id
+ * @returns {Object} - Product details
+ */
+export const fetchProductDetailsById = createAsyncThunk(
+  'products/fetchProductDetailsById',
+  async (id) => {
+    const response = await getProductById(id);
+    return response;
+  },
+);
+
 const initialState = {
   items: [],
   loading: false,
@@ -56,6 +70,14 @@ const productsSlice = createSlice({
         state.loading = true;
       })
       .addCase(fetchByQuery.fulfilled, (state, action) => {
+        state.items = action.payload;
+        state.loading = false;
+      })
+      .addCase(fetchProductDetailsById.pending, (state) => {
+        state.items = [];
+        state.loading = true;
+      })
+      .addCase(fetchProductDetailsById.fulfilled, (state, action) => {
         state.items = action.payload;
         state.loading = false;
       });

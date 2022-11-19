@@ -1,10 +1,15 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import styles from '../styles/components/Product.module.scss';
 
 function Product(props) {
-  const { product: { price, title, thumbnail } } = props;
+  const {
+    product: {
+      price, title, thumbnail, id,
+    },
+  } = props;
 
   /**
    * Format the price to BRL currency.
@@ -23,11 +28,16 @@ function Product(props) {
   return (
     <div className={styles.product}>
       <img src={thumbnail} alt={title} className={styles.image} />
+
       <h3 className={styles.title}>{title}</h3>
+
       <p className={styles.price}>
         {formatPrice(price)}
       </p>
-      <button type="button" className={styles.button}>Add to Cart</button>
+
+      <Link to={`/details/${id}`} className={styles.details}>Ver detalhes</Link>
+
+      <button type="button" className={styles.button}>Adicionar ao Carrinho</button>
     </div>
   );
 }

@@ -2,6 +2,7 @@
 
 @mixin scrollbar {
   width: .8rem;
+  height: .8rem;
 
   &-track {
     background: darken($white, 2%);
