@@ -41,7 +41,7 @@ function Searchbar() {
       <Input
         value={searchTerm}
         onChange={onChangeHandler}
-        placeholder="Search for something"
+        placeholder="Pesquise um produto"
         className={input}
       />
       <IoSearchOutline className={icon} onClick={onSearchHandler} />
