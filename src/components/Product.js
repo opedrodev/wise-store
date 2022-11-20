@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import styles from '../styles/components/Product.module.scss';
+import Button from './Button';
 
 function Product(props) {
   const {
@@ -37,7 +38,10 @@ function Product(props) {
 
       <Link to={`/details/${id}`} className={styles.details}>Ver detalhes</Link>
 
-      <button type="button" className={styles.button}>Adicionar ao Carrinho</button>
+      <Button
+        placeholder="Adicionar ao Carrinho"
+        className={styles.button}
+      />
     </div>
   );
 }
