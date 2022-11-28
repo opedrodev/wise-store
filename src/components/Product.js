@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import formatPrice from '../helpers/priceFormatter';
 
 import styles from '../styles/components/Product.module.scss';
 import Button from './Button';
@@ -11,20 +12,6 @@ function Product(props) {
       price, title, thumbnail, id,
     },
   } = props;
-
-  /**
-   * Format the price to BRL currency.
-   * @param {Number} value - Number to be formatted
-   * @returns {String} Formatted price
-   */
-  const formatPrice = (value) => {
-    const formatter = new Intl.NumberFormat('pt-BR', {
-      style: 'currency',
-      currency: 'BRL',
-    });
-
-    return formatter.format(value);
-  };
 
   return (
     <div className={styles.product}>
