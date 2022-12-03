@@ -6,6 +6,7 @@
   & > .input {
     width: 40rem;
     border: none;
+    padding-right: 3.4rem;
 
     &:focus {
       outline: 2px solid $primary;
@@ -18,16 +19,27 @@
   }
 
   & > .icon {
-   font-size: 1.8rem;
-   position: absolute;
-   top: 50%;
-   right: 0;
-   transform: translate(-.8rem, -50%);
-   cursor: pointer;
-   transition: .3s all;
+    color: $gray;
+    font-size: 1.8rem;
+
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-.8rem, -50%);
+
+    cursor: pointer;
+    transition: .3s all;
 
    &:hover {
      color: $primary;
    }
+  }
+
+  @media (max-width: 680px) {
+    width: 100%;
+
+    & > .input {
+      width: 100%;
+    }
   }
 }

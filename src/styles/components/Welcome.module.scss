@@ -1,0 +1,12 @@
+@use '../utils/colors.scss' as *;
+
+.welcome {
+  align-self: center;
+
+  & > .title {
+    color: lighten($gray, 10%);
+    font-size: 4.8rem;
+    text-transform: uppercase;
+    user-select: none;
+  }
+}
