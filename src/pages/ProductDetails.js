@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { fetchProductDetailsById } from '../app/reducers/products';
 import Button from '../components/Button';
+import Feedback from '../components/Feedback';
 import Header from '../components/Header';
 import formatPrice from '../helpers/priceFormatter';
 
@@ -67,6 +68,8 @@ function ProductDetails() {
             />
           </div>
         </section>
+
+        <Feedback />
       </div>
     </main>
   );
