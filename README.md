@@ -10,4 +10,4 @@ Wise Store is a simple, easy to use, and lightweight e-commerce platform. It is 
 
 ## How to use Wise Store?
 
-Live Demo: pending...
+Under development!
