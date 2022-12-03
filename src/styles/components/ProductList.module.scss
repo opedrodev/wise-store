@@ -12,4 +12,8 @@
   &::-webkit-scrollbar {
     @include scrollbar;
   }
+
+  @media (max-width: 600px) {
+    padding: 3.2rem;
+  }
 }

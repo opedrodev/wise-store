@@ -38,7 +38,7 @@ Button.propTypes = {
   id: PropTypes.string,
   className: PropTypes.string,
   name: PropTypes.string,
-  placeholder: PropTypes.string,
+  placeholder: PropTypes.node,
   onClick: PropTypes.func,
   disabled: PropTypes.bool,
 };

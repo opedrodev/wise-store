@@ -4,4 +4,9 @@
   grid-template-rows: auto 1fr;
 
   height: 100vh;
+
+  & > .back {
+    align-self: start;
+    margin: 3.2rem 0 0 3.2rem;
+  }
 }
