@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { addProductToCart } from '../app/reducers/cart';
 import formatPrice from '../helpers/priceFormatter';
 
 import styles from '../styles/components/Product.module.scss';
@@ -10,8 +12,14 @@ function Product(props) {
   const {
     product: {
       price, title, thumbnail, id,
-    },
+    }, product,
   } = props;
+
+  const dispatch = useDispatch();
+
+  const onAddProductToCart = () => {
+    dispatch(addProductToCart(product));
+  };
 
   return (
     <div className={styles.product}>
@@ -28,6 +36,7 @@ function Product(props) {
       <Button
         placeholder="Adicionar ao Carrinho"
         className={styles.button}
+        onClick={onAddProductToCart}
       />
     </div>
   );

@@ -1,4 +1,3 @@
-/* eslint-disable no-nested-ternary */
 import React, { useEffect, useState } from 'react';
 import { IoArrowForward } from 'react-icons/io5';
 import { useDispatch, useSelector } from 'react-redux';
