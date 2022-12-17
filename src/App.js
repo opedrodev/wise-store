@@ -4,6 +4,7 @@ import './App.scss';
 import Cart from './pages/Cart';
 import Home from './pages/Home';
 import ProductDetails from './pages/ProductDetails';
+import Thanks from './pages/Thanks';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Route path="/search/:term" element={<Home />} />
       <Route path="/details/:id" element={<ProductDetails />} />
       <Route path="/cart" element={<Cart />} />
+      <Route path="/thanks" element={<Thanks />} />
     </Routes>
   );
 }

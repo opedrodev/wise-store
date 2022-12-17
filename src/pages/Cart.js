@@ -1,5 +1,7 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { removeAllProductsFromCart } from '../app/reducers/cart';
 import Button from '../components/Button';
 import CartItem from '../components/CartItem';
 import Header from '../components/Header';
@@ -9,8 +11,15 @@ import styles from '../styles/pages/Cart.module.scss';
 
 function Cart() {
   const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const cartTotal = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
+  const onFinishPurchase = () => {
+    dispatch(removeAllProductsFromCart());
+    navigate('/thanks');
+  };
 
   return (
     <section className={styles.cart}>
@@ -24,8 +33,9 @@ function Cart() {
             { formatPrice(cartTotal)}
           </p>
           <Button
-            placeholder="Checkout"
+            placeholder="Finalizar Compra"
             className={styles.button}
+            onClick={onFinishPurchase}
           />
         </div>
 

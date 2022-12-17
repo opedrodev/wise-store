@@ -1,0 +1,26 @@
+@use '../utils/colors' as *;
+
+.thanks {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+
+  & > .wrapper {
+    width: 100%;
+    height: calc(100vh - 6.6rem);
+    display: grid;
+    place-content: center;
+
+    & > h1 {
+      font-size: 3.2rem;
+      margin-bottom: 1.6rem;
+    }
+
+    & > a {
+      font-size: 1.8rem;
+      text-align: center;
+      text-decoration: none;
+      color: $primary;
+    }
+  }
+}

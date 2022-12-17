@@ -42,12 +42,18 @@ const cartSlice = createSlice({
       state.splice(state.indexOf(productInCart), 1);
       saveCartToLocalStorage(state);
     },
+
+    removeAllProductsFromCart(state) {
+      state.splice(0, state.length);
+      saveCartToLocalStorage(state);
+    },
   },
 });
 
 export const {
   addProductToCart,
   incrementProductQuantity, decrementProductQuantity, removeProductFromCart,
+  removeAllProductsFromCart,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;
