@@ -1,46 +1,40 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { decrementProductQuantity, incrementProductQuantity, removeProductFromCart } from '../app/reducers/cart';
+import { useSelector } from 'react-redux';
 import Button from '../components/Button';
+import CartItem from '../components/CartItem';
 import Header from '../components/Header';
 import formatPrice from '../helpers/priceFormatter';
 
+import styles from '../styles/pages/Cart.module.scss';
+
 function Cart() {
   const cart = useSelector((state) => state.cart);
-  const dispatch = useDispatch();
 
   const cartTotal = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   return (
-    <section>
+    <section className={styles.cart}>
       <Header />
 
-      {cart.map((item) => (
-        <div key={item.id}>
-          <img src={item.thumbnail} alt={item.title} />
-          <h3>{item.title}</h3>
-          <p>{item.price}</p>
-          <p>{item.quantity}</p>
+      <div className={styles.wrapper}>
+        <div className={styles.checkout}>
+          <p>
+            Total:
+            &nbsp;
+            { formatPrice(cartTotal)}
+          </p>
           <Button
-            placeholder="+"
-            onClick={() => dispatch(incrementProductQuantity(item))}
-          />
-          <Button
-            placeholder="-"
-            onClick={() => dispatch(decrementProductQuantity(item))}
-          />
-          <Button
-            placeholder="X"
-            onClick={() => dispatch(removeProductFromCart(item))}
+            placeholder="Checkout"
+            className={styles.button}
           />
         </div>
-      ))}
 
-      <h1>
-        Total:
-        &nbsp;
-        { formatPrice(cartTotal)}
-      </h1>
+        <div className={styles.items}>
+          {cart.map((item) => (
+            <CartItem item={item} />
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

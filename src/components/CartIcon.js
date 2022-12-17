@@ -3,9 +3,9 @@ import { IoCartOutline } from 'react-icons/io5';
 import { useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import styles from '../styles/components/Cart.module.scss';
+import styles from '../styles/components/CartIcon.module.scss';
 
-function Cart() {
+function CartIcon() {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const cart = useSelector((state) => state.cart);
@@ -16,7 +16,7 @@ function Cart() {
 
   return (
     <div
-      className={styles.cart}
+      className={styles.cart_icon}
       onClick={onCartClick}
       aria-hidden
     >
@@ -26,4 +26,4 @@ function Cart() {
   );
 }
 
-export default Cart;
+export default CartIcon;
