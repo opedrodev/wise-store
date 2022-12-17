@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { addProductToCart } from '../app/reducers/cart';
 import { fetchProductDetailsById } from '../app/reducers/products';
 import Button from '../components/Button';
 import Feedback from '../components/Feedback';
@@ -12,6 +13,7 @@ import styles from '../styles/pages/ProductDetails.module.scss';
 function ProductDetails() {
   const { id } = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { items: item } = useSelector((state) => state.products);
   const [selectedPicture, setSelectedPicture] = useState('');
 
@@ -61,10 +63,12 @@ function ProductDetails() {
             <Button
               placeholder="Adicionar ao Carrinho"
               className={styles.button}
+              onClick={() => dispatch(addProductToCart(item))}
             />
             <Button
               placeholder="Ir para o Carrinho"
               className={styles.button}
+              onClick={() => navigate('/cart')}
             />
           </div>
         </section>

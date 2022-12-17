@@ -1,0 +1,39 @@
+.cart_item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: repeat(4, auto);
+  column-gap: 3.2rem;
+  row-gap: .8rem;
+  align-items: center;
+
+  border: .1rem solid lightgray;
+  border-radius: .8rem;
+  padding: 1.6rem;
+  margin-right: .8rem;
+
+  &:not(:last-child) {
+    margin-bottom: 3.2rem;
+  }
+
+  & > .thumbnail {
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+  }
+
+  & > .title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 90%;
+  }
+
+  & > .controls {
+    display: flex;
+    gap: .8rem;
+
+    & > button {
+      width: 3.2rem;
+      height: 3.2rem;
+    }
+  }
+}

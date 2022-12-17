@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from '../styles/components/Header.module.scss';
-import Cart from './Cart';
+import CartIcon from './CartIcon';
 import Logo from './Logo';
 import Searchbar from './Searchbar';
 
@@ -12,7 +12,7 @@ function Header() {
     <header className={header}>
       <Logo />
       <Searchbar />
-      <Cart />
+      <CartIcon />
     </header>
   );
 }

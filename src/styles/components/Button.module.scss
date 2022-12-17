@@ -1,6 +1,10 @@
 @use '../utils/colors.scss' as *;
 
 .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   background-color: $primary;
   color: $white;
   padding: .8rem;
